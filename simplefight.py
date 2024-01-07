@@ -45,20 +45,21 @@ def gameover(hero):
     for i in end_text:
         print (f'{i:-^50}')
            
-enemy_list=[
-    ['Crab People',50,5,10,'Crab Claw'],
-    ['Wolf Spider',30,3,7,'Scary Bite'],
-    ['ManBearPig',200,5,30,'ManBearPigBite'],
-    ['Bowser',100,7,15,'Bowser Fire'],
-    ['Ridley',175,6,12,'Spike Tail']]
+if __name__ == "__main__":
+    enemy_list=[
+        ['Crab People',50,5,10,'Crab Claw'],
+        ['Wolf Spider',30,3,7,'Scary Bite'],
+        ['ManBearPig',200,5,30,'ManBearPigBite'],
+        ['Bowser',100,7,15,'Bowser Fire'],
+        ['Ridley',175,6,12,'Spike Tail']]
 
-hero_stats = ['Ryu',175,6,12,'HADOUKEN!!!']
+    hero_stats = ['Ryu',175,6,12,'HADOUKEN!!!']
 
-#Load Hero
-hero = Character(*hero_stats)
+    #Load Hero
+    hero = Character(*hero_stats)
 
-#Load Random Enemy
-enemy_id = randint(0,len(enemy_list)-1)
-enemy=Character(*enemy_list[enemy_id])
+    #Load Random Enemy
+    enemy_id = randint(0,len(enemy_list)-1)
+    enemy=Character(*enemy_list[enemy_id])
 
-fight (hero,enemy)
+    fight (hero,enemy)
