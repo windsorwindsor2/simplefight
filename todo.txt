@@ -1,1 +1,4 @@
-todo.txt
+1. Remove dependence on emoji library. Emojis can just be copy\pasted in.
+
+2. Get rid of all these print statements. Just return a string or list of strings.
+Some function or class can use that to print the output.

@@ -46,20 +46,31 @@ def gameover(hero):
         print (f'{i:-^50}')
            
 if __name__ == "__main__":
+    #name, max_hp, min_dmg, max_dmg, attack_name
+
+    #removed Nintendo references from example,
+    #because nobody hates their fans like Nintendo :-(
     enemy_list=[
         ['Crab People',50,5,10,'Crab Claw'],
         ['Wolf Spider',30,3,7,'Scary Bite'],
         ['ManBearPig',200,5,30,'ManBearPigBite'],
-        ['Bowser',100,7,15,'Bowser Fire'],
-        ['Ridley',175,6,12,'Spike Tail']]
+        ['Nozzlo',100,7,15,'Zoldathian Blunderbuss'],
+        ['Cutman',175,6,12,'Rolling Cutter']]
 
-    hero_stats = ['Ryu',175,6,12,'HADOUKEN!!!']
+    hero_list = [
+        ['Ryu',175,6,12,'HADOUKEN!!!'],
+        ['Saitama',175,9000,9001,'Punch'],
+        ['Master Chief',120,7,15,'M6D Pistol'],
+        ['Megaman',100,13,17,'Mega Buster']]
+
+    
+    def randchar(char_list: list) -> Character:
+        char_id = randint(0,len(char_list)-1)
+        return Character(*char_list[char_id])
 
     #Load Hero
-    hero = Character(*hero_stats)
+    hero = randchar(hero_list)
 
-    #Load Random Enemy
-    enemy_id = randint(0,len(enemy_list)-1)
-    enemy=Character(*enemy_list[enemy_id])
-
+    enemy = randchar(enemy_list)
+    
     fight (hero,enemy)
