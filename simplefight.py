@@ -1,5 +1,4 @@
 from random import randint
-from emoji import emojize
 
 class Character:
     def __init__(self,name, max_hp, min_dmg, max_dmg, attack_name):
@@ -15,7 +14,7 @@ class Character:
         if self.hp <= 0:
             self.dead = True
 
-def fight(hero,enemy):
+def fight(hero,enemy): 
     print(hero.name, "Encounters a wild", enemy.name)
     
     while not hero.dead and not enemy.dead:
@@ -41,7 +40,8 @@ def fight(hero,enemy):
         print (enemy.name, "is dead.", hero.name,"Level Up")
 
 def gameover(hero):
-    end_text=["","RIP",hero.name,"GAME OVER",emojize(":crying_face:"),""]
+    #got rid of emoji here. It looked weird with monospaced fonts in terminal.
+    end_text=["","RIP",hero.name,"GAME OVER"]
     for i in end_text:
         print (f'{i:-^50}')
            
