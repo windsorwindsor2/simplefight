@@ -1,4 +1,4 @@
-from simplefight import Character, fight
+from simplefight import Fighter, fight
 from random import randint
 
 #name, max_hp, min_dmg, max_dmg, attack_name
@@ -19,9 +19,9 @@ hero_list = [
         ['Megaman',100,13,17,'Mega Buster']]
 
     
-def randchar(char_list: list) -> Character:
+def randchar(char_list: list) -> Fighter:
         char_id = randint(0,len(char_list)-1)
-        return Character(*char_list[char_id])
+        return Fighter(*char_list[char_id])
 
     #Load Hero
 hero = randchar(hero_list)
